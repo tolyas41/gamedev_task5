@@ -165,7 +165,7 @@ Matrix::Matrix(const char* char_array) {
 		rows = 0;
 		columns = 0;
 		data = nullptr;
-		std::cout << "\n==INVALID STRING==\n";
+		throw InvalidStringConstructor();
 	}
 }
 
@@ -253,7 +253,7 @@ const Matrix Matrix::operator+(Matrix& right_obj) const {
 		return result;
 	}
 	else {
-		throw MatrixOperationsException("\nerr: Matrices are not consistent!\n");
+		throw NotConsistent();
 	}
 }
 
@@ -285,7 +285,7 @@ const Matrix Matrix::operator-(Matrix& right_obj) const {
 		return result;
 	}
 	else {
-		throw MatrixOperationsException("\nerr: Matrices are not consistent!\n");
+		throw NotConsistent();
 	}
 }
 
@@ -319,7 +319,7 @@ const Matrix Matrix::operator*(Matrix& right_obj) const {
 		return result;
 	}
 	else {
-		throw MatrixOperationsException("\nerr: Matrices are not consistent!\n");
+		throw NotConsistent();
 	}
 }
 
@@ -374,7 +374,7 @@ const Matrix Matrix::operator/(Matrix right_obj) const {
 		return *this * inverse_matrix;
 	}
 	else {
-		throw MatrixOperationsException("\nerr: The divisor matrix is not square\n");
+		throw NotSquare();
 	}
 }
 
@@ -387,7 +387,7 @@ const Matrix Matrix::operator/(int divisionValue) const {
 				result.data[i][j] = data[i][j] / divisionValue;
 			}
 			else {
-				throw MatrixOperationsException("\nErr : cannot divide by zero!\n");
+				throw DivideByZero();
 			}
 		}
 	}
@@ -480,8 +480,7 @@ bool Matrix::operator!=(const Matrix& right_obj) {
 int Matrix::checkOverflowAddition(int valueLeft, int valueRight) const {
 	if ((valueRight >= 0 && valueLeft > INT_MAX - valueRight) ||
 		(valueRight <= 0 && valueLeft < INT_MIN - valueRight)) {
-		std::cout << "\nint variable overflow!\n";
-		return 0;
+		throw IntOverflow();
 	}
 	else {
 		return valueLeft + valueRight;
@@ -491,8 +490,7 @@ int Matrix::checkOverflowAddition(int valueLeft, int valueRight) const {
 int Matrix::checkOverflowSubtraction(int valueLeft, int valueRight) const {
 	if ((valueRight <= 0 && valueLeft > INT_MAX + valueRight) ||
 		(valueRight >= 0 && valueLeft < INT_MIN + valueRight)) {
-		std::cout << "\nint variable overflow!\n";
-		return 0;
+		throw IntOverflow();
 	}
 	else {
 		return valueLeft - valueRight;

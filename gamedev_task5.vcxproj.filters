@@ -29,5 +29,23 @@
     <ClInclude Include="MatrixOperationsException.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="BaseException.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DivideByZero.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NotConsistent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NotSquare.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IntOverflow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InvalidStringConstructor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,7 +1,11 @@
 #pragma once
 #include <string>
 #include <cstddef>
-#include "MatrixOperationsException.h"
+#include "DivideByZero.h"
+#include "NotConsistent.h"
+#include "NotSquare.h"
+#include "IntOverflow.h"
+#include "InvalidStringConstructor.h"
 
 class Matrix {
 	int rows;

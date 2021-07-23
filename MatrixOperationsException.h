@@ -1,16 +1,9 @@
 #pragma once
-#include <string>
+#include "BaseException.h"
 
-class MatrixOperationsException {
-private:
-	std::string error_message;
+class MatrixOperationsException : public BaseException {
 public:
-	MatrixOperationsException(std::string error)
-		: error_message(error) {
-
-	}
-
-	const std::string getError() {
+	virtual const std::string getError() override {
 		return error_message;
 	}
 };
