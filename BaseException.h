@@ -5,6 +5,6 @@ class BaseException {
 protected:
 	std::string error_message;
 public:
-	virtual const std::string getError() = 0;
+	virtual const std::string getError() const = 0;
 };
 

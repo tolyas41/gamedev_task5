@@ -165,7 +165,7 @@ Matrix::Matrix(const char* char_array) {
 		rows = 0;
 		columns = 0;
 		data = nullptr;
-		throw InvalidStringConstructor();
+		throw InvalidStringException();
 	}
 }
 
@@ -253,7 +253,7 @@ const Matrix Matrix::operator+(Matrix& right_obj) const {
 		return result;
 	}
 	else {
-		throw NotConsistent();
+		throw NotConsistentException();
 	}
 }
 
@@ -285,7 +285,7 @@ const Matrix Matrix::operator-(Matrix& right_obj) const {
 		return result;
 	}
 	else {
-		throw NotConsistent();
+		throw NotConsistentException();
 	}
 }
 
@@ -319,7 +319,7 @@ const Matrix Matrix::operator*(Matrix& right_obj) const {
 		return result;
 	}
 	else {
-		throw NotConsistent();
+		throw NotConsistentException();
 	}
 }
 
@@ -374,7 +374,7 @@ const Matrix Matrix::operator/(Matrix right_obj) const {
 		return *this * inverse_matrix;
 	}
 	else {
-		throw NotSquare();
+		throw NotSquareException();
 	}
 }
 
@@ -387,7 +387,7 @@ const Matrix Matrix::operator/(int divisionValue) const {
 				result.data[i][j] = data[i][j] / divisionValue;
 			}
 			else {
-				throw DivideByZero();
+				throw DivideByZeroException();
 			}
 		}
 	}
@@ -480,7 +480,7 @@ bool Matrix::operator!=(const Matrix& right_obj) {
 int Matrix::checkOverflowAddition(int valueLeft, int valueRight) const {
 	if ((valueRight >= 0 && valueLeft > INT_MAX - valueRight) ||
 		(valueRight <= 0 && valueLeft < INT_MIN - valueRight)) {
-		throw IntOverflow();
+		throw IntOverflowException();
 	}
 	else {
 		return valueLeft + valueRight;
@@ -490,7 +490,7 @@ int Matrix::checkOverflowAddition(int valueLeft, int valueRight) const {
 int Matrix::checkOverflowSubtraction(int valueLeft, int valueRight) const {
 	if ((valueRight <= 0 && valueLeft > INT_MAX + valueRight) ||
 		(valueRight >= 0 && valueLeft < INT_MIN + valueRight)) {
-		throw IntOverflow();
+		throw IntOverflowException();
 	}
 	else {
 		return valueLeft - valueRight;

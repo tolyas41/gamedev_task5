@@ -144,13 +144,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseException.h" />
-    <ClInclude Include="DivideByZero.h" />
-    <ClInclude Include="IntOverflow.h" />
-    <ClInclude Include="InvalidStringConstructor.h" />
+    <ClInclude Include="DivideByZeroException.h" />
+    <ClInclude Include="IntOverflowException.h" />
+    <ClInclude Include="InvalidStringException.h" />
     <ClInclude Include="MatrixOperationsException.h" />
     <ClInclude Include="Matrix.h" />
-    <ClInclude Include="NotConsistent.h" />
-    <ClInclude Include="NotSquare.h" />
+    <ClInclude Include="NotConsistentException.h" />
+    <ClInclude Include="NotSquareException.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

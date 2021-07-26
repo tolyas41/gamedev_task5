@@ -1,16 +1,16 @@
 #pragma once
 #include "MatrixOperationsException.h"
 
-class NotSquare :public MatrixOperationsException {
+class NotSquareException :public MatrixOperationsException {
 public:
-	NotSquare() {
+	NotSquareException() {
 		error_message = "\nthe divisor matrix is not square\n";
 	}
-	NotSquare(std::string error) {
+	NotSquareException(std::string error) {
 		error_message = error;
 	}
 
-	virtual const std::string getError() override {
+	virtual const std::string getError() const override {
 		return error_message;
 	}
 };

@@ -32,19 +32,19 @@
     <ClInclude Include="BaseException.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DivideByZero.h">
+    <ClInclude Include="DivideByZeroException.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="NotConsistent.h">
+    <ClInclude Include="NotConsistentException.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="NotSquare.h">
+    <ClInclude Include="NotSquareException.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="IntOverflow.h">
+    <ClInclude Include="IntOverflowException.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="InvalidStringConstructor.h">
+    <ClInclude Include="InvalidStringException.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
